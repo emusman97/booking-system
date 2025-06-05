@@ -7,6 +7,7 @@
     "start": "node dist/server.js",
     "dev": "nodemon",
     "build": "tsc",
+    "seed:tours": "ts-node src/seeds/seedTours.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.{ts,js,json}",
     "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'"
