@@ -65,4 +65,6 @@ const tourSchema = new Schema<ITourDocument>({
   },
 });
 
+tourSchema.index({ name: 'text', description: 'text' });
+
 export const Tour = model<ITourDocument>(TOUR_MODEL_NAME, tourSchema);
