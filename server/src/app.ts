@@ -1,13 +1,11 @@
 import express, { Request, Response } from 'express';
-import helmet from 'helmet';
-import { env } from './config';
+import { setupServer } from './config';
 
 const app = express();
 
-app.use(helmet());
-app.use(express.json());
+setupServer(app);
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_: Request, res: Response) => {
   res.send('Express + TypeScript + Mongoose Server');
 });
 
@@ -20,6 +18,4 @@ app.all('/{*any}', (_, res: Response) => {
     .send();
 });
 
-app.listen(env.PORT, () => {
-  console.log('Server lsitening on port', env.PORT);
-});
+export { app };
