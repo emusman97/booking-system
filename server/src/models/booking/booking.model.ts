@@ -33,6 +33,11 @@ const bookingSchema = new Schema<IBookingDocument>({
   },
 });
 
+bookingSchema.pre('find', function (next) {
+  this.populate('tour');
+  next();
+});
+
 export const Booking = model<IBookingDocument>(
   BOOKING_MODEL_NAME,
   bookingSchema
