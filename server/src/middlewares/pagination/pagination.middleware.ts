@@ -1,4 +1,5 @@
 import { NextFunction, Response } from 'express';
+import { z } from 'zod';
 import {
   DEFAULT_RESPONSE_LIMIT,
   DEFAULT_STARTING_PAGE,
@@ -12,28 +13,50 @@ import {
   safeParseNumber,
 } from '../../utils';
 
+export const PaginationQuerySchema = z.object({
+  page: z
+    .string()
+    .optional()
+    .transform((val) => {
+      const parsed = safeParseNumber(val, DEFAULT_STARTING_PAGE);
+
+      return Number.isInteger(parsed) && parsed >= 1
+        ? parsed
+        : DEFAULT_STARTING_PAGE;
+    }),
+  limit: z
+    .string()
+    .optional()
+    .transform((val) => {
+      const parsed = safeParseNumber(val, DEFAULT_RESPONSE_LIMIT);
+
+      return Number.isInteger(parsed) && parsed >= 1
+        ? Math.min(parsed, MAX_RESPONSE_LIMIT)
+        : DEFAULT_RESPONSE_LIMIT;
+    }),
+});
+
 export const paginationMiddleware = (
   req: RequestWithPagination,
   res: Response,
   next: NextFunction
 ) => {
-  const page = safeParseNumber(req.query.page as string, DEFAULT_STARTING_PAGE);
-  const limit = Math.min(
-    safeParseNumber(req.query.limit as string, DEFAULT_RESPONSE_LIMIT),
-    MAX_RESPONSE_LIMIT
-  );
+  const result = PaginationQuerySchema.safeParse(req.query);
 
-  if (
-    !Number.isInteger(page) ||
-    !Number.isInteger(limit) ||
-    page < 1 ||
-    limit < 1
-  ) {
+  if (result.error) {
     res
       .status(400)
-      .json(createFailureResponse(INVALID_PAGINATION_PARAMS_ERROR));
+      .json(
+        createFailureResponse(
+          INVALID_PAGINATION_PARAMS_ERROR,
+          result.error.errors
+        )
+      );
     return;
   }
+
+  const { page = DEFAULT_STARTING_PAGE, limit = DEFAULT_RESPONSE_LIMIT } =
+    result.data;
 
   const skip = calculateSkip(page, limit);
 
