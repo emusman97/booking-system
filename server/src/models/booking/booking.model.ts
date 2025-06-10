@@ -33,6 +33,18 @@ const bookingSchema = new Schema<IBookingDocument>(
       },
       required: true,
     },
+    numberOfAdults: {
+      type: Number,
+      required: true,
+    },
+    numberOfChildren: {
+      type: Number,
+      required: true,
+    },
+    paymentMethod: {
+      type: String,
+      required: true,
+    },
   },
   baseSchemaOptions()
 );
