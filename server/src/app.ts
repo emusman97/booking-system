@@ -1,7 +1,11 @@
 import express, { Request, Response, Router } from 'express';
 import { setupServer } from './config';
-import { BASE_ENDPOINT } from './constants';
-import { tourRouter } from './routes';
+import {
+  BASE_ENDPOINT,
+  BOOKING_BASE_ENDPOINT,
+  TOUR_BASE_ENDPOINT,
+} from './constants';
+import { bookingRouter, tourRouter } from './routes';
 
 const app = express();
 
@@ -18,7 +22,10 @@ function main() {
     res.send('Express + TypeScript + Mongoose Server');
   });
 
-  addRouters([{ route: 'tours', router: tourRouter }]);
+  addRouters([
+    { route: TOUR_BASE_ENDPOINT, router: tourRouter },
+    { route: BOOKING_BASE_ENDPOINT, router: bookingRouter },
+  ]);
 
   app.all('/{*any}', (_, res: Response) => {
     res
