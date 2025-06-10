@@ -89,7 +89,7 @@ export async function updateBooking(
 
     res.status(200).json(createSuccessResponse());
   } catch (error) {
-    logger.error(`Error deleting booking: ${error}`);
+    logger.error(`Error updating booking: ${error}`);
     res.status(500).json(createFailureResponse());
   }
 }
