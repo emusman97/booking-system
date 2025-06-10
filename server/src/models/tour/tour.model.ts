@@ -14,16 +14,28 @@ const tourSchema = new Schema<ITourDocument>(
       type: String,
       required: true,
     },
+    location: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
     },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
     duration: {
       type: String,
+      required: true,
+    },
+    startDate: {
+      type: Date,
+      required: true,
+    },
+    endDate: {
+      type: Date,
       required: true,
     },
     coverImage: {
@@ -54,7 +66,7 @@ const tourSchema = new Schema<ITourDocument>(
             required: true,
           },
           date: {
-            type: String,
+            type: Date,
             required: true,
           },
           schedule: {
