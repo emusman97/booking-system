@@ -16,6 +16,8 @@ export interface ITour {
   description: string;
   price: string;
   duration: string;
+  startDate: string;
+  endDate: string;
   coverImage: string;
   additionalImages: AdditionalImages;
   departureLocation: string;
