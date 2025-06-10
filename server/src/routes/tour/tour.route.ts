@@ -1,9 +1,18 @@
 import { Router } from 'express';
-import { getAllTours } from '../../controller';
-import { paginationMiddleware } from '../../middlewares';
+import { getAllTours, searchTours } from '../../controller';
+import {
+  paginationMiddleware,
+  tourSearchQueryMiddleware,
+} from '../../middlewares';
 
 const router = Router();
 
 router.get('/', paginationMiddleware, getAllTours);
+router.get(
+  '/search',
+  paginationMiddleware,
+  tourSearchQueryMiddleware,
+  searchTours
+);
 
 export { router as tourRouter };

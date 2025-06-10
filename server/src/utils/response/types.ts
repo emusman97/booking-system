@@ -1,3 +1,5 @@
+import { ZodIssue } from 'zod';
+
 interface BaseResponse<D> {
   success: boolean;
   message?: string;
@@ -20,6 +22,7 @@ export interface PaginatedSuccessResponse<D>
 
 export interface FailureResonse extends BaseResponse<null> {
   success: false;
+  details?: ZodIssue[];
 }
 
 export interface CreatePaginatedResponseParams<D> extends PaginationMeta {

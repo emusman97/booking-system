@@ -1,3 +1,4 @@
+import { ZodIssue } from 'zod';
 import {
   GENERIC_ERROR_MESSAGE,
   GENERIC_SUCCESS_MESSAGE,
@@ -24,5 +25,6 @@ export const createPaginatedSuccessResponse = <D>({
 });
 
 export const createFailureResponse = (
-  message = GENERIC_ERROR_MESSAGE
-): FailureResonse => ({ success: false, message, data: null });
+  message = GENERIC_ERROR_MESSAGE,
+  details?: ZodIssue[]
+): FailureResonse => ({ success: false, message, data: null, details });
