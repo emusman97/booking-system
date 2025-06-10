@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon",
+    "build": "tsc",
+    "seed:tours": "ts-node src/seeds/seedTours.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.{ts,js,json}",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.15.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.17.0",
+    "zod": "^3.25.51"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.11.29",
+    "@types/express": "^5.0.2",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.15.29",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
