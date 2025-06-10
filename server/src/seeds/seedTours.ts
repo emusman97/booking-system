@@ -1,7 +1,8 @@
-import { connectDb } from '../config';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
+import { connectDb } from '../config';
 import { Tour } from '../models';
+import { safeParseNumber } from '../utils';
 
 async function seedTours() {
   try {
@@ -14,9 +15,15 @@ async function seedTours() {
     const filePath = path.join(__dirname, '../data/toursData.json');
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
+    const transformedData = data.map((elm) => ({
+      ...elm,
+      location: elm.city,
+      price: safeParseNumber(elm.price),
+    }));
+
     console.log('Inserting data 💻');
     await Tour.deleteMany({});
-    await Tour.insertMany(data);
+    await Tour.insertMany(transformedData);
 
     console.log('🙌 Tours seeded successfully!');
     process.exit();

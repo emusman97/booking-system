@@ -5,7 +5,7 @@ export type AdditionalImages = string[];
 
 export interface IItinerary {
   title: string;
-  date: string;
+  date: Date;
   schedule: string[];
 }
 export type ItinerarySchedule = IItinerary[];
@@ -13,11 +13,12 @@ export type ItinerarySchedule = IItinerary[];
 export interface ITour {
   name: string;
   city: string;
+  location: string;
   description: string;
-  price: string;
+  price: number;
   duration: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   coverImage: string;
   additionalImages: AdditionalImages;
   departureLocation: string;
