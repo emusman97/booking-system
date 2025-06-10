@@ -8,6 +8,21 @@ export interface SuccessResponse<D> extends BaseResponse<D> {
   success: true;
 }
 
+interface PaginationMeta {
+  page: number;
+  limit: number;
+  totalItems: number;
+  totalPages: number;
+}
+export interface PaginatedSuccessResponse<D>
+  extends SuccessResponse<D>,
+    PaginationMeta {}
+
 export interface FailureResonse extends BaseResponse<null> {
   success: false;
+}
+
+export interface CreatePaginatedResponseParams<D> extends PaginationMeta {
+  data?: D;
+  message?: string;
 }

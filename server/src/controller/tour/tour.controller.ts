@@ -1,16 +1,30 @@
 import { Response } from 'express';
+import { Tour } from '../../models';
+import { RequestWithPagination } from '../../types';
 import {
+  calculateTotalPages,
   createFailureResponse,
-  createSuccessResponse,
+  createPaginatedSuccessResponse,
   logger,
 } from '../../utils';
-import { Tour } from '../../models';
 
-export async function getAllTours(_, res: Response) {
+export async function getAllTours(req: RequestWithPagination, res: Response) {
   try {
-    const tours = await Tour.find({}).limit(10);
+    const pagination = req.pagination;
 
-    res.status(200).json(createSuccessResponse(tours));
+    const tours = await Tour.find({})
+      .skip(pagination.skip)
+      .limit(pagination.limit);
+    const totalItems = await Tour.countDocuments();
+
+    res.status(200).json(
+      createPaginatedSuccessResponse({
+        data: tours,
+        ...pagination,
+        totalItems,
+        totalPages: calculateTotalPages(totalItems, pagination.limit),
+      })
+    );
   } catch (error) {
     logger.error(`Error getting all tours: ${error}`);
     res.status(500).json(createFailureResponse());
