@@ -1,4 +1,6 @@
 export const BASE_ENDPOINT = '/api';
+export const TOUR_BASE_ENDPOINT = 'tour';
+export const BOOKING_BASE_ENDPOINT = 'booking';
 
 export const GENERIC_SUCCESS_MESSAGE = 'OK';
 export const GENERIC_ERROR_MESSAGE = 'Something went wrong';
@@ -9,3 +11,5 @@ export const INVALID_SEARCH_QUERY_PARAMS = 'Invalid query parameters';
 export const DEFAULT_STARTING_PAGE = 1;
 export const DEFAULT_RESPONSE_LIMIT = 10;
 export const MAX_RESPONSE_LIMIT = 100;
+
+export const INVALID_PAYLOAD = 'Invalid payload';
