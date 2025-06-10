@@ -14,7 +14,10 @@ import {
   INVALID_BOOKING_ID,
   TOUR_NOT_FOUND,
 } from './constants';
-import { RequestWithBookingPayload } from './types';
+import {
+  RequestWithBookingPayload,
+  RequestWithUpdateBookingPayload,
+} from './types';
 
 export async function getAllBookings(
   req: RequestWithPagination,
@@ -61,6 +64,32 @@ export async function createBooking(
     res.status(201).json(createSuccessResponse(booking));
   } catch (error) {
     logger.error(`Error creating booking: ${error}`);
+    res.status(500).json(createFailureResponse());
+  }
+}
+
+export async function updateBooking(
+  req: RequestWithUpdateBookingPayload,
+  res: Response
+) {
+  try {
+    const { id } = req.params;
+
+    if (isValidObjectId(id) === false) {
+      res.status(400).json(createFailureResponse(INVALID_BOOKING_ID));
+      return;
+    }
+
+    const result = await Booking.findByIdAndUpdate(id, req.body).exec();
+
+    if (!result) {
+      res.status(404).json(createFailureResponse(BOOKING_NOT_FOUND));
+      return;
+    }
+
+    res.status(200).json(createSuccessResponse());
+  } catch (error) {
+    logger.error(`Error deleting booking: ${error}`);
     res.status(500).json(createFailureResponse());
   }
 }
