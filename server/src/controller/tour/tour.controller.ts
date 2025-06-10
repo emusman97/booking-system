@@ -39,8 +39,6 @@ export async function searchTours(
   try {
     const pagination = req.pagination;
 
-    console.log(req.searchQuery);
-
     const tours = await Tour.find({})
       .skip(pagination.skip)
       .limit(pagination.limit);
