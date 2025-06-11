@@ -3,6 +3,7 @@ import type { Theme } from './types';
 export const theme: Theme = {
   colors: {
     primary: '#ff7a59',
+    primaryLight: '#ff9c85',
     secondary: '#fcd34d',
     success: '#22c55e',
     danger: '#ef4444',

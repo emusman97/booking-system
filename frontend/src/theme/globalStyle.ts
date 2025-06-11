@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
        font-weight: ${({ theme }) => theme.typography.fontWeight.normal};
        line-height: ${({ theme }) => theme.typography.lineHeight.normal};
        color: ${({ theme }) => theme.colors.text.primary};
+       background: ${({ theme }) => theme.colors.light}
      }
 
      *, *:before, *:after {
