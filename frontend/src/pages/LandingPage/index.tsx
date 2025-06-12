@@ -22,8 +22,8 @@ export function LandingPage(): JSX.Element {
           <HeadingContainerItem>
             <MainHeading>
               <MainHeadingSpan>
-                <img src={Images.lineBelowText} />
                 {AppString.Explore}
+                <img src={Images.lineBelowText} />
               </MainHeadingSpan>
               {AppString.LandingMainHeading}
             </MainHeading>

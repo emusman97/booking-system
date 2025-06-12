@@ -23,9 +23,10 @@ export const MainHeading = styled.h1`
 
 export const MainHeadingSpan = styled.span`
   position: relative;
-  z-index: 100;
+  z-index: 1;
 
   & img {
+    z-index: -1;
     position: absolute;
     left: 0;
     right: 0;
