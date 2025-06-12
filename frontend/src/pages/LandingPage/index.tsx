@@ -6,10 +6,10 @@ import { AppString } from '@/constants';
 
 import {
   Container,
-  ContainerItem,
   Description,
   ExploreNowButton,
   HeadingContainerItem,
+  ImageContainerItem,
   MainHeading,
   MainHeadingSpan,
 } from './styles';
@@ -18,7 +18,7 @@ export function LandingPage(): JSX.Element {
   return (
     <MainLayout>
       <PageContentContainer>
-        <Container>
+        <Container direction="row">
           <HeadingContainerItem>
             <MainHeading>
               <MainHeadingSpan>
@@ -30,7 +30,10 @@ export function LandingPage(): JSX.Element {
             <Description>{AppString.LandingDescription}</Description>
             <ExploreNowButton>{AppString.ExploreNow}</ExploreNowButton>
           </HeadingContainerItem>
-          <ContainerItem></ContainerItem>
+
+          <ImageContainerItem>
+            <img src={Images.landingPageImage} />
+          </ImageContainerItem>
         </Container>
       </PageContentContainer>
     </MainLayout>

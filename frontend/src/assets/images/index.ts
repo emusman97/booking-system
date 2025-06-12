@@ -1,9 +1,9 @@
-import landingPageImagesBg from './landing-page-images-bg.png';
+import landingPageImage from './landing-page-image.png';
 import lineBelowText from './line_below_text.png';
 import logo from './logo.png';
 
 export const Images = {
   logo,
-  landingPageImagesBg,
   lineBelowText,
+  landingPageImage,
 } as const;

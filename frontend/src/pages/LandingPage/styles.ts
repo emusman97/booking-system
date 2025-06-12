@@ -2,12 +2,12 @@ import { PrimaryButton, Stack } from '@/components';
 import { theme } from '@/theme';
 import styled from 'styled-components';
 
-export const Container = styled(Stack)`
-  padding-top: ${theme.spacing['21']};
+const ContainerItem = styled(Stack)`
+  width: 50%;
 `;
 
-export const ContainerItem = styled(Stack)`
-  width: 50%;
+export const Container = styled(Stack)`
+  padding-top: ${theme.spacing['21']};
 `;
 
 export const HeadingContainerItem = styled(ContainerItem)`
@@ -44,4 +44,15 @@ export const Description = styled.p`
 
 export const ExploreNowButton = styled(PrimaryButton)`
   margin-top: ${(props) => props.theme.spacing['6']};
+`;
+
+export const ImageContainerItem = styled(ContainerItem)`
+  & img {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    object-fit: fill;
+  }
 `;
