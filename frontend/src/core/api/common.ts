@@ -1,4 +1,5 @@
 import Axios, { type AxiosResponse } from 'axios';
+
 import { BASE_HEADERS } from './constants';
 import {
   HttpMethods,

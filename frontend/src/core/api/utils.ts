@@ -1,5 +1,6 @@
-import Axios, { type AxiosRequestConfig, type AxiosResponse } from 'axios';
 import { isError, isObjectNotEmpty } from '@/utils';
+import Axios, { type AxiosRequestConfig, type AxiosResponse } from 'axios';
+
 import { NetworkErrorMessage } from './constants';
 import {
   ApiErrorMessages,

@@ -1,10 +1,13 @@
 import '@/index.css';
+
+import { StrictMode } from 'react';
+
 import { MainRoutes } from '@/routes';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { queryClient } from './core';
 import { ThemeProvider } from 'styled-components';
+
+import { queryClient } from './core';
 import { GlobalStyle, theme } from './theme';
 
 import '@fontsource/poppins/300.css';
