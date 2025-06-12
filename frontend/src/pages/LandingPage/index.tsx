@@ -1,7 +1,9 @@
+import { type JSX } from 'react';
+
 import { Images } from '@/assets';
 import { MainLayout, PageContentContainer } from '@/components';
 import { AppString } from '@/constants';
-import { type JSX } from 'react';
+
 import {
   Container,
   ContainerItem,

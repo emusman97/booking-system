@@ -1,5 +1,6 @@
+import type { FailureResult, SuccessResult } from '@/types';
 import { AxiosError, type AxiosResponse } from 'axios';
-import type { SuccessResult, FailureResult } from '@/types';
+
 import { API_FAILURE_RESULT_SYMBOL, API_SUCCESS_RESULT_SYMBOL } from './utils';
 
 export const ApiErrorMessages = {

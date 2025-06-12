@@ -1,4 +1,5 @@
 import type { JSX, PropsWithChildren } from 'react';
+
 import { NavBar } from './components';
 import { Container, NavBarSpacing } from './styles';
 
