@@ -1,13 +1,36 @@
-import { MainLayout } from '@/components';
+import { Images } from '@/assets';
+import { MainLayout, PageContentContainer } from '@/components';
+import { AppString } from '@/constants';
 import { type JSX } from 'react';
-import styled from 'styled-components';
-
-const H1 = styled.h1``;
+import {
+  Container,
+  ContainerItem,
+  Description,
+  ExploreNowButton,
+  HeadingContainerItem,
+  MainHeading,
+  MainHeadingSpan,
+} from './styles';
 
 export function LandingPage(): JSX.Element {
   return (
     <MainLayout>
-      <H1>Landing page</H1>
+      <PageContentContainer>
+        <Container>
+          <HeadingContainerItem>
+            <MainHeading>
+              <MainHeadingSpan>
+                <img src={Images.lineBelowText} />
+                {AppString.Explore}
+              </MainHeadingSpan>
+              {AppString.LandingMainHeading}
+            </MainHeading>
+            <Description>{AppString.LandingDescription}</Description>
+            <ExploreNowButton>{AppString.ExploreNow}</ExploreNowButton>
+          </HeadingContainerItem>
+          <ContainerItem></ContainerItem>
+        </Container>
+      </PageContentContainer>
     </MainLayout>
   );
 }

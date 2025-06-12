@@ -52,6 +52,7 @@ export const theme: Theme = {
       '3xl': '1.875rem', // 30px
       '4xl': '2.25rem', // 36px
       '5xl': '3rem', // 48px
+      '6xl': '4rem', // 64px
     },
     fontWeight: {
       light: 300,
@@ -79,6 +80,7 @@ export const theme: Theme = {
     12: '3rem', // 48px
     16: '4rem', // 64px
     20: '5rem', // 80px
+    21: '6rem',
   },
   breakpoints: {
     sm: '576px',

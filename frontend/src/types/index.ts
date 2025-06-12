@@ -25,3 +25,7 @@ export interface FailureResult<C, E> {
 export type Result<D, C, E> = SuccessResult<D, C> | FailureResult<C, E>;
 
 export type Callback = () => void;
+
+export interface BaseCustomStyledProps {
+  className?: string;
+}
