@@ -1,7 +1,7 @@
 import { Stack } from '@/components';
 import styled, { css } from 'styled-components';
 
-export const Container = /* prettier-ignore */ styled(Stack)<{hasValue: boolean}>`
+export const Container = styled(Stack)<{ hasValue: boolean }>`
   gap: ${(props) => props.theme.spacing['2']};
   align-items: center;
   cursor: pointer;
