@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type JSX } from 'react';
 
 import { Images } from '@/assets';
 import { MainLayout, PageContentContainer } from '@/components';
-import { AppString } from '@/constants';
+import { AppString, Cities } from '@/constants';
 import { useSearchQuery } from '@/hooks';
 
 import {
@@ -12,6 +12,8 @@ import {
   type FilterInputType,
 } from './components';
 import {
+  CitiesContainer,
+  City,
   Container,
   LocationInput,
   MainImage,
@@ -86,6 +88,14 @@ export function SearchToursPage(): JSX.Element {
 
             <SearchButton />
           </SearchFiltersContainer>
+
+          <CitiesContainer direction="row">
+            {Cities.map((city, index) => (
+              <City key={`${city.value}-${index}`}>
+                <p>{city.title}</p>
+              </City>
+            ))}
+          </CitiesContainer>
         </Container>
       </PageContentContainer>
     </MainLayout>

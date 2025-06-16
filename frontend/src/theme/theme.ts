@@ -34,6 +34,7 @@ export const theme: Theme = {
       danger: '#ef4444',
       warning: '#f59e0b',
       info: '#3b82f6',
+      city: '#797C9A',
     },
   },
   typography: {

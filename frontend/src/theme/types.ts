@@ -31,6 +31,7 @@ interface Colors {
     danger: string;
     warning: string;
     info: string;
+    city: string;
   };
 }
 
