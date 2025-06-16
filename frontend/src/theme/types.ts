@@ -2,6 +2,7 @@ interface Colors {
   primary: string;
   primaryLight: string;
   secondary: string;
+  border: string;
   success: string;
   danger: string;
   warning: string;
