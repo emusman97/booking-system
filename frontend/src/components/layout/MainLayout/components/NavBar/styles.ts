@@ -4,7 +4,6 @@ export const Nav = styled.nav`
   padding: 1rem ${({ theme }) => theme.spacing['8']} 1rem
     ${({ theme }) => theme.spacing['8']};
   position: absolute;
-  height: 2rem;
   z-index: 1000;
   left: 0;
   right: 0;
