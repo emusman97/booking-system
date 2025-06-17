@@ -13,4 +13,5 @@ export enum AppString {
   ChooseDate = 'Choose Date',
   PriceRange = 'Price Range',
   PopularCities = 'Popular Cities',
+  NoTours = 'Sorry, We didn’t found any tour right now',
 }

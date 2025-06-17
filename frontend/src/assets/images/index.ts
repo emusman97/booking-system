@@ -6,6 +6,7 @@ import landingPageImage from './landing-page-image.png';
 import lineBelowText from './line_below_text.png';
 import locationIcon from './location-icon.png';
 import logo from './logo.png';
+import noToursDataIcon from './no-tours-data-icon.png';
 import pricenIcon from './price-icon.png';
 import searchIcon from './search-icon.png';
 
@@ -20,4 +21,5 @@ export const Images = {
   dateIcon,
   pricenIcon,
   searchIcon,
+  noToursDataIcon,
 } as const;

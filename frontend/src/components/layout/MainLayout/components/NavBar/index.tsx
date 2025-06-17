@@ -26,7 +26,7 @@ export function NavBar({ showExploreNowButton }: NavBarProps): JSX.Element {
 
       <NavLinks>
         <NavItem>
-          <Link to={RoutePath.Root}>{AppString.Tours}</Link>
+          <Link to={RoutePath.Tours}>{AppString.Tours}</Link>
         </NavItem>
         <NavItem>
           <Link to={RoutePath.Root}>{AppString.AddTour}</Link>
