@@ -23,12 +23,6 @@ export const SearchFiltersContainer = styled(Stack)`
 
 export const LocationInput = styled.input``;
 
-export const PriceRangeImg = styled.img`
-  height: 0.8rem;
-  width: 0.8rem;
-  object-fit: contain;
-`;
-
 export const PopularCitiesHeader = styled.p`
   margin-top: 64px;
   margin-bottom: 32px;
