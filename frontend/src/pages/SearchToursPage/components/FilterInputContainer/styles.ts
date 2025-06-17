@@ -11,18 +11,18 @@ export const Container = styled(Stack)`
   justify-content: center;
   gap: ${(props) => props.theme.spacing['2']};
 
-  & img {
+  & > img {
     height: 2rem;
     width: 2rem;
   }
+`;
 
-  & p {
+export const LabelContainer = styled(Stack)`
+  gap: ${(props) => props.theme.spacing['2']};
+
+  & > p {
     font-weight: ${(props) => props.theme.typography.fontWeight.semibold};
     font-size: ${(props) => props.theme.typography.fontSize.xl};
-  }
-
-  & div {
-    gap: ${(props) => props.theme.spacing['2']};
   }
 `;
 

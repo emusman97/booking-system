@@ -12,4 +12,5 @@ export enum AppString {
   ChooseHere = 'Choose Here',
   ChooseDate = 'Choose Date',
   PriceRange = 'Price Range',
+  PopularCities = 'Popular Cities',
 }

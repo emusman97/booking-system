@@ -1,15 +1,16 @@
 import { useMemo, type JSX } from 'react';
 
 import { Images } from '@/assets';
-import { Stack } from '@/components';
 import { AppString } from '@/constants';
 
-import { Container, Divider, MainContainer } from './styles';
+import { Container, Divider, LabelContainer, MainContainer } from './styles';
 import type { FilterInputContainerProps } from './types';
 
-export function FilterInputContainer(
-  { type, showRightDivider, renderInput }: FilterInputContainerProps
-): JSX.Element {
+export function FilterInputContainer({
+  type,
+  showRightDivider,
+  renderInput,
+}: FilterInputContainerProps): JSX.Element {
   const labelText = useMemo(() => {
     if (type === 'location') {
       return AppString.Location;
@@ -35,11 +36,11 @@ export function FilterInputContainer(
       <Container direction="row">
         {Icon}
 
-        <Stack>
+        <LabelContainer>
           <p>{labelText}</p>
 
           {renderInput && renderInput(type)}
-        </Stack>
+        </LabelContainer>
       </Container>
       {showRightDivider && <Divider />}
     </MainContainer>

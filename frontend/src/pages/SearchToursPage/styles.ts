@@ -23,13 +23,31 @@ export const SearchFiltersContainer = styled(Stack)`
 
 export const LocationInput = styled.input``;
 
-export const CitiesContainer = styled(Stack)`
-  margin-top: 5rem;
-  padding-bottom: 2rem;
+export const PriceRangeImg = styled.img`
+  height: 0.8rem;
+  width: 0.8rem;
+  object-fit: contain;
+`;
 
-  flex-wrap: wrap;
-  gap: ${(props) => props.theme.spacing['4']};
-  align-items: flex-start;
+export const PopularCitiesHeader = styled.p`
+  margin-top: 64px;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: ${(props) => props.theme.typography.fontWeight.semibold};
+`;
+
+export const CitiesContainer = styled(Stack)`
+  padding-bottom: 2rem;
+  align-items: center;
+
+  & > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: ${(props) => props.theme.spacing['4']};
+    align-items: flex-start;
+  }
 `;
 
 export const City = styled(BaseButton)`
