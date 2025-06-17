@@ -8,6 +8,7 @@ export const MainImage = styled.img`
 `;
 
 export const Container = styled(Stack)`
+  align-self: center;
   position: relative;
   height: 2rem;
   justify-self: center;

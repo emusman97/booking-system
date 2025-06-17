@@ -1,6 +1,7 @@
+import { Stack } from '@/components/Stack';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled(Stack)`
   height: 100%;
   width: 100%;
 `;
