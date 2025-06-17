@@ -2,7 +2,9 @@ import { Stack } from '@/components';
 import styled from 'styled-components';
 
 export const Container = styled(Stack)`
+  flex: 1;
   align-items: center;
+  justify-content: center;
   gap: ${(props) => props.theme.spacing['6']};
 
   & > img {

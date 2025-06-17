@@ -7,5 +7,5 @@ export const Container = styled(Stack)`
 `;
 
 export const NavBarSpacing = styled.div`
-  height: calc(${({ theme }) => theme.spacing['8']} + 2rem);
+  margin-top: calc(${({ theme }) => theme.spacing['8']} + 2rem);
 `;
