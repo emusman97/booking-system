@@ -3,6 +3,8 @@ import { type JSX } from 'react';
 import { Images } from '@/assets';
 import { MainLayout, PageContentContainer } from '@/components';
 import { AppString } from '@/constants';
+import { RoutePath } from '@/routes';
+import { useNavigate } from 'react-router';
 
 import {
   Container,
@@ -15,8 +17,14 @@ import {
 } from './styles';
 
 export function LandingPage(): JSX.Element {
+  const navigate = useNavigate();
+
+  const gotoSearchTours = () => {
+    navigate(RoutePath.SearchTours);
+  };
+
   return (
-    <MainLayout>
+    <MainLayout showExploreNowButton>
       <PageContentContainer>
         <Container direction="row">
           <HeadingContainerItem>
@@ -28,7 +36,9 @@ export function LandingPage(): JSX.Element {
               {AppString.LandingMainHeading}
             </MainHeading>
             <Description>{AppString.LandingDescription}</Description>
-            <ExploreNowButton>{AppString.ExploreNow}</ExploreNowButton>
+            <ExploreNowButton onClick={gotoSearchTours}>
+              {AppString.ExploreNow}
+            </ExploreNowButton>
           </HeadingContainerItem>
 
           <ImageContainerItem>

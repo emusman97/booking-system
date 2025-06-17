@@ -4,11 +4,18 @@ import { Images } from '@/assets';
 import { PrimaryButton } from '@/components/PrimaryButton';
 import { AppString } from '@/constants';
 import { RoutePath } from '@/routes';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 import { ButtonContainer, Logo, Nav, NavItem, NavLinks } from './styles';
+import type { NavBarProps } from './types';
 
-export function NavBar(): JSX.Element {
+export function NavBar({ showExploreNowButton }: NavBarProps): JSX.Element {
+  const navigate = useNavigate();
+
+  const gotoSearchTours = () => {
+    navigate(RoutePath.SearchTours);
+  };
+
   return (
     <Nav>
       <Logo>
@@ -30,7 +37,11 @@ export function NavBar(): JSX.Element {
       </NavLinks>
 
       <ButtonContainer>
-        <PrimaryButton>{AppString.ExploreNow}</PrimaryButton>
+        {showExploreNowButton && (
+          <PrimaryButton onClick={gotoSearchTours}>
+            {AppString.ExploreNow}
+          </PrimaryButton>
+        )}
       </ButtonContainer>
     </Nav>
   );

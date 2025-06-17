@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  // prettier-ignore
-  padding: 1rem ${({ theme }) => theme.spacing['8']} 1rem ${({ theme }) =>
-    theme.spacing['8']};
+  padding: 1rem ${({ theme }) => theme.spacing['8']} 1rem
+    ${({ theme }) => theme.spacing['8']};
   position: absolute;
   height: 2rem;
   z-index: 1000;

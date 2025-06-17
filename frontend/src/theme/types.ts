@@ -2,6 +2,7 @@ interface Colors {
   primary: string;
   primaryLight: string;
   secondary: string;
+  border: string;
   success: string;
   danger: string;
   warning: string;
@@ -30,6 +31,7 @@ interface Colors {
     danger: string;
     warning: string;
     info: string;
+    city: string;
   };
 }
 

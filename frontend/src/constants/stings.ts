@@ -7,4 +7,10 @@ export enum AppString {
   Explore = 'Explore',
   LandingMainHeading = ' The New World  With Tourbay',
   LandingDescription = 'No matter where in the world you want to go, we can help get you there and make your tour a stupendous memory.',
+  Location = 'Location',
+  LocationPlaceholder = 'Where you want to go?',
+  ChooseHere = 'Choose Here',
+  ChooseDate = 'Choose Date',
+  PriceRange = 'Price Range',
+  PopularCities = 'Popular Cities',
 }

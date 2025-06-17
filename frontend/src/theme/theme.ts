@@ -5,6 +5,7 @@ export const theme: Theme = {
     primary: '#ff7a59',
     primaryLight: '#ff9c85',
     secondary: '#fcd34d',
+    border: '#EBEBEB',
     success: '#22c55e',
     danger: '#ef4444',
     warning: '#f59e0b',
@@ -27,12 +28,13 @@ export const theme: Theme = {
     text: {
       primary: '#1e1e4b',
       secondary: '#4b5563',
-      muted: '#6b7280',
+      muted: '#999999',
       disabled: '#9ca3af',
       success: '#22c55e',
       danger: '#ef4444',
       warning: '#f59e0b',
       info: '#3b82f6',
+      city: '#797C9A',
     },
   },
   typography: {
@@ -98,10 +100,10 @@ export const theme: Theme = {
     full: '9999px',
   },
   shadows: {
-    sm: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
-    md: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
-    lg: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
-    xl: '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
+    sm: '0 1px 3px #9FA4BD1F, 0 1px 2px #9FA4BD3D',
+    md: '0 3px 6px #9FA4BD29, 0 3px 6px #9FA4BD3B',
+    lg: '0 10px 20px #9FA4BD30, 0 6px 6px #9FA4BD3B',
+    xl: '0 14px 28px #9FA4BD40, 0 10px 10px #9FA4BD38',
   },
   zIndex: {
     0: 0,

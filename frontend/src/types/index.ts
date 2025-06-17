@@ -29,3 +29,9 @@ export type Callback = () => void;
 export interface BaseCustomStyledProps {
   className?: string;
 }
+
+export interface SelectItem {
+  label: string;
+  value: string;
+}
+export type SelectItems = SelectItem[];
